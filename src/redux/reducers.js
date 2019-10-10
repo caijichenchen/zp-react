@@ -62,12 +62,12 @@ function chat(state=initChat,action){
 			}
 		case MSG_READ:
 		    const {from, to, count} = action.data
-		      state.chatMsgs.forEach(msg => {
+		    state.chatMsgs.forEach(msg => {
 		        if(msg.from===from && msg.to===to && !msg.read) {
 		          msg.read = true
 		        }
 		    })
-		      return {
+		    return {
 		        users: state.users,
 		        chatMsgs: state.chatMsgs.map(msg => {
 		          if(msg.from===from && msg.to===to && !msg.read) { // 需要更新
@@ -77,7 +77,7 @@ function chat(state=initChat,action){
 		          }
 		        }),
 		        unReadCount: state.unReadCount-count
-		      }
+		    }
 		default :
 			return state
 	}

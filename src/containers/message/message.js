@@ -16,7 +16,7 @@ function getLastMsgs(chatMsgs, userid) {
   	const lastMsgObjs = {}
   	chatMsgs.forEach(msg => {
 
-	    // 对msg进行个体的统计
+	    // 对未读消息做出个体统计
 	    if(msg.to===userid && !msg.read) {
 	      	msg.unReadCount = 1
 	    } else {
